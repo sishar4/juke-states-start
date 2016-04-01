@@ -28,10 +28,11 @@ juke.controller('ArtistsCtrl', function ($scope, $log, $rootScope, ArtistFactory
 juke.controller('ArtistCtrl', function ($scope, $log, ArtistFactory, PlayerFactory, $rootScope, $state, $stateParams) {
 
   $scope.showMe = true;
-
+  console.log($stateParams.id);
   if ($stateParams.id.length > 0) {
-    ArtistFactory.fetchById(data.id)
+    ArtistFactory.fetchById($stateParams.id)
     .then(function (artist) {
+      console.log(artist);
       $scope.artist = artist;
     })
     .catch($log.error);

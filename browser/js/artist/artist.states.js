@@ -18,7 +18,7 @@ juke.config(function ($stateProvider) {
 
 juke.config(function ($stateProvider) {
   $stateProvider.state('listOneArtist', {
-    url: 'artists/:id',
+    url: '/artists/:id',
     template: '' +
       '<div>' +
             '<h3>{{ artist.name }}</h3>' +
