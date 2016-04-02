@@ -18,8 +18,8 @@ juke.config(function ($stateProvider) {
     url: '/artists/:id',
     templateUrl: './oneArtist.html',
     resolve: {
-      artist: function(ArtistFactory) {
-        return ArtistFactory.fetchById('56eb34f5e9f5b4c278fa7a3a');
+      artist: function(ArtistFactory, $state, $stateParams) {
+        return ArtistFactory.fetchById($stateParams.id);
       }
     },
     controller: 'ArtistCtrl'

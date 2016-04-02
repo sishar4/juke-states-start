@@ -21,7 +21,7 @@ juke.controller('ArtistsCtrl', function ($scope, $log, $rootScope, artists) {
 
 /* ARTIST (SINGULAR) CONTROLLER */
 
-juke.controller('ArtistCtrl', function ($scope, $log, PlayerFactory, $rootScope, $state, $stateParams, artist) {
+juke.controller('ArtistCtrl', function ($scope, $log, PlayerFactory, $rootScope, artist) {
 
   $scope.showMe = true;
   // console.log($stateParams.id);

@@ -18,8 +18,8 @@ juke.config(function ($stateProvider) {
     url: '/albums/:id',
     templateUrl: './oneAlbum.html',
     resolve: {
-      album: function(AlbumFactory) {
-        return AlbumFactory.fetchById('56eb34f6e9f5b4c278fa7a3b');
+      album: function(AlbumFactory, $state, $stateParams) {
+        return AlbumFactory.fetchById($stateParams.id);
       }
     },
     controller: 'AlbumCtrl'
