@@ -7,7 +7,7 @@ juke.factory('ArtistFactory', function ($http, $q, AlbumFactory, SongFactory) {
   function getData (res) { return res.data; }
 
   ArtistFactory.fetchAll = function () {
-    return $http.get('/api/artists')
+    return $http.get('/api/artists/')
     .then(getData);
   };
 
