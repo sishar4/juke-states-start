@@ -2,7 +2,7 @@
 
 /* ALBUMS (SINGULAR) CONTROLLER */
 
-juke.controller('AlbumCtrl', function ($scope, $log, PlayerFactory, album) {
+juke.controller('AlbumCtrl', function ($scope, $log, PlayerFactory, album, $location) {
 
   $scope.showMe = true;
   // if ($stateParams.id.length > 0) {
