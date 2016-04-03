@@ -18,6 +18,7 @@
     <script src="/angular-ui-router/release/angular-ui-router.js" defer></script>
     <script src="js/album/album.states.js" defer></script>
     <script src="js/artist/artist.states.js" defer></script>
+    <base href="/albums">
   </head>
   <body ng-app="juke">
     <div id="main" class="container-fluid">
@@ -26,12 +27,12 @@
         <sidebar ng-controller="SidebarCtrl">
           <img src="juke.svg" class="logo">
           <section>
-            <h4 class="playlist-item active">
+            <h4 ui-sref-active="active" class="playlist-item">
               <a ui-sref="albumList">ALBUMS</a>
             </h4>
           </section>
           <section>
-            <h5 class="playlist-item">
+            <h5 ui-sref-active="active" class="playlist-item">
               <a ui-sref="artistList">ARTISTS</a>
             </h5>
           </section>

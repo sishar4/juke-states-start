@@ -2,9 +2,8 @@
 
 /* ALBUMS (SINGULAR) CONTROLLER */
 
-juke.controller('AlbumCtrl', function ($scope, $log, PlayerFactory, album, $location) {
+juke.controller('AlbumCtrl', function ($scope, PlayerFactory, album) {
 
-  $scope.showMe = true;
   // if ($stateParams.id.length > 0) {
   //   AlbumFactory.fetchById($stateParams.id)
   //   .then(function (album) {
@@ -38,20 +37,7 @@ juke.controller('AlbumCtrl', function ($scope, $log, PlayerFactory, album, $loca
 
 /* ALBUMS (PLURAL) CONTROLLER */
 
-juke.controller('AlbumsCtrl', function ($scope, $log, $rootScope, PlayerFactory, albums) {
+juke.controller('AlbumsCtrl', function ($scope, albums) {
 
-  $scope.showMe = true;
-
-  $scope.$on('viewSwap', function (event, data) {
-    $scope.showMe = (data.name === 'allAlbums');
-  });
-
-  $scope.viewOneAlbum = function (album) {
-    // $rootScope.$broadcast('viewSwap', { name: 'oneAlbum', id: album._id });
-
-  };
-
-  if (albums.length > 0) {
-    $scope.albums = albums;
-  }
+  $scope.albums = albums;
 });

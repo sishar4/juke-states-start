@@ -8,8 +8,5 @@ juke.config(function($urlRouterProvider, $locationProvider){
 
     $urlRouterProvider.when('/artists/:id', '/artists/:id/albums');
 
-    $locationProvider.html5Mode({
-    	enabled: true,
-    	requireBase: false
-    });
+    $locationProvider.html5Mode(true);
 });

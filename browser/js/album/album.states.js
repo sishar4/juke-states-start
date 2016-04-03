@@ -3,7 +3,7 @@ juke
 .config(function ($stateProvider) {
   $stateProvider.state('albumList', {
     url: '/albums',
-    templateUrl: './allAlbums.html',
+    templateUrl: '/js/album/allAlbums.html',
     resolve: {
       albums: function(AlbumFactory) {
         return AlbumFactory.fetchAll();
@@ -16,9 +16,9 @@ juke
 juke.config(function ($stateProvider) {
   $stateProvider.state('listOneAlbum', {
     url: '/albums/:id',
-    templateUrl: './oneAlbum.html',
+    templateUrl: '/js/album/oneAlbum.html',
     resolve: {
-      album: function(AlbumFactory, $state, $stateParams) {
+      album: function(AlbumFactory, $stateParams) {
         return AlbumFactory.fetchById($stateParams.id);
       }
     },

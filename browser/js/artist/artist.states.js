@@ -3,7 +3,7 @@
 juke.config(function ($stateProvider) {
   $stateProvider.state('artistList', {
     url: '/artists',
-    templateUrl: './allArtists.html',
+    templateUrl: '/js/artist/allArtists.html',
     resolve: {
       artists: function(ArtistFactory) {
         return ArtistFactory.fetchAll();
@@ -16,9 +16,9 @@ juke.config(function ($stateProvider) {
 juke.config(function ($stateProvider) {
   $stateProvider.state('listOneArtist', {
     url: '/artists/:id',
-    templateUrl: './oneArtist.html',
+    templateUrl: '/js/artist/oneArtist.html',
     resolve: {
-      artist: function(ArtistFactory, $state, $stateParams) {
+      artist: function(ArtistFactory, $stateParams) {
         return ArtistFactory.fetchById($stateParams.id);
       }
     },
@@ -26,10 +26,10 @@ juke.config(function ($stateProvider) {
   })
   .state('listOneArtist.albums', {
     url: '/albums',
-    templateUrl: '/oneArtistAlbums.html'
+    templateUrl: '/js/artist/oneArtistAlbums.html'
   })
   .state('listOneArtist.songs', {
     url: '/songs',
-    templateUrl: '/oneArtistSongs.html'
+    templateUrl: '/js/artist/oneArtistSongs.html'
   });
 });
